@@ -21,7 +21,7 @@ $provinsi = isset($_GET['provinsi']) ? $_GET['provinsi'] : false;
 />
 <link rel="stylesheet" href="assets/css/style.css" />
 
-<a href="index.html" class="btn-back">Kembali ke beranda</a>
+<a href="index.php" class="btn-back">Kembali ke beranda</a>
 
 <div class="login" style="height: auto; width: 405px">
 	<h2 class="active">Sign up</h2>
