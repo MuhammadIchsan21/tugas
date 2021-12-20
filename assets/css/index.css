@@ -403,6 +403,11 @@ img {
           transform: scale(1.1);
 }
 
+.work__container .work__img a {
+  text-decoration: none;
+  color: #000000;
+}
+
 /*=== CONTACT ===*/
 .contact__input {
   width: 100%;

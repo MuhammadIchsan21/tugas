@@ -8,16 +8,16 @@
 <div class="login">
 	<h2 class="active">sign in</h2>
 
-	<form action="" method="POST">
-		<input type="text" class="text" name="username" />
-		<span>email</span>
+	<form action="login-proses.php" method="POST">
+		<input type="text" class="text" name="nim" />
+		<span>nim</span>
 
 		<br />
 
 		<br />
 
-		<input type="password" class="text" name="password" />
-		<span>password</span>
+		<input type="text" class="text" name="nama" />
+		<span>nama</span>
 		<br />
 
 		<button class="signin">Sign In</button>

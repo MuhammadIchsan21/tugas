@@ -1,3 +1,10 @@
+<?php
+session_start();
+if ($_SESSION['nim'] == NULL){
+    header('location: login.php');
+} else {
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -8,32 +15,54 @@
 		<link rel="stylesheet" href="assets/css/index.css" />
 	</head>
 	<body>
+		<a href="logout.php"
+		style="text-decoration: none; color: #000000;
+						background-color: red;
+  					border: none;
+  					color: white;
+						margin:20px;
+  					padding: 15px 32px;
+  					text-align: center;
+  					text-decoration: none;
+  					display: inline-block;
+  					font-size: 16px;
+						border-radius:8px;">Logout</a>
 		<section class="work section" id="gallery">
 			<h2 class="section-title">Daftar Dosen bimbingan</h2>
-			<div class="work__container bd-grid">
-				<div class="work__img">
-					<img src="assets/images/1.jpg" alt="" />
-					<a href="">Nama Dosen</a>
-					<a href="form-bimbingan.html">Bimbingan</a>
-				</div>
-				<div class="work__img">
-					<img src="assets/images/2.jpg" alt="" />
-					<p>Subur</p>
-					<a href="form-bimbingan.html">Bimbingan</a>
-				</div>
-				<div class="work__img">
-					<img src="assets/img/3.jpg" alt="" />
-				</div>
-				<div class="work__img">
-					<img src="assets/img/4.jpg" alt="" />
-				</div>
-				<div class="work__img">
-					<img src="assets/img/5.jpg" alt="" />
-				</div>
-				<div class="work__img">
-					<img src="assets/img/6.jpg" alt="" />
-				</div>
+			<div class='work__container bd-grid'>
+			<?php
+			include './function/config.php';
+			$dosen = mysqli_query($koneksi, "SELECT * from dosen");
+			foreach ($dosen as $row){
+				echo
+				"
+					<div class='work__img'>
+						<img src='assets/images/1.jpg' alt='' />
+						<a href='data-dosen.php'
+						style='text-decoration: none; color: #000000; margin:20px;'>".$row['namadosen']."</a>
+						<br>
+						<br>
+						<a href='form-bimbingan.php'
+						style='text-decoration: none; color: #000000;
+						background-color: #4CAF50;
+  					border: none;
+  					color: white;
+						margin:20px;
+  					padding: 15px 32px;
+  					text-align: center;
+  					text-decoration: none;
+  					display: inline-block;
+  					font-size: 16px;
+						border-radius:8px;'>Bimbingan</a>
+					</div>
+				"
+				;
+			}
+			?>
 			</div>
 		</section>
 	</body>
 </html>
+<?php
+}
+?>
